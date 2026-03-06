@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    <link rel="stylesheet" href="https://unpkg.com/bulma@0.9.5/css/bulma.min.css">
+    
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='bulma.min.css') }}">
+
+    
+    <style>
+        body {
+            background-color: #f6ef6c; /* amarillo */
+        }
+
+        .title {
+            color: #d50000; /* rojo */
+        }
+
+        hr {
+            background-color: #d50000;
+            height: 3px;
+        }
+
+        /* Botones */
+        .button.is-success {
+            background-color: #d50000;
+            border: none;
+            color: white;
+        }
+
+        .button.is-success:hover {
+            background-color: #b71c1c;
+        }
+
+        .button.is-danger {
+            background-color: #ff0000;
+            color: white;
+        }
+
+        .button.is-warning {
+            background-color: #ff5252;
+            color: white;
+        }
+
+        /* Tabla */
+        table {
+            background-color: white;
+        }
+
+        th {
+            background-color: #d50000;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+<section class="section">
+    <div class="container">
+        <h1 class="title has-text-centered">Gestión de Oxxos</h1>
+        <hr>
+        
+        {% block content %}{% endblock %}
+    </div>
+</section>
+
+</body>
+</html>

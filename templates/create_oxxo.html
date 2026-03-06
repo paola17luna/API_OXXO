@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% block title %}Agregar Oxxo{% endblock %}
+{% block content %}
+
+<div class="columns is-centered">
+    <div class="column is-half">
+        <div class="box">
+            <h3 class="title is-4 has-text-centered">Agregar Oxxo</h3>
+            <hr>
+
+            <form action="{{ url_for('create_oxxo') }}" method="POST">
+
+                <div class="field">
+                    <label class="label">Cod_Sucursal</label>
+                    <div class="control">
+                        <input class="input" type="text" name="cod_sucursal" placeholder="Ej. 000456" required>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label class="label">Nombre del Gerente</label>
+                    <div class="control">
+                        <input class="input" type="text" name="nombre_gerente" placeholder="Ej. Paola" required>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label class="label">Apellido Paterno del Gerente</label>
+                    <div class="control">
+                        <input class="input" type="text" name="ap_paterno" placeholder="Ej. Sánchez" required>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label class="label">Apellido Materno del Gerente</label>
+                    <div class="control">
+                        <input class="input" type="text" name="ap_materno" placeholder="Ej. Luna" required>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label class="label">no_sucursal</label>
+                    <div class="control">
+                        <input class="input" type="number" name="no_sucursal" min="1" max="300" placeholder="1 - 300" required>
+                    </div>
+                </div>
+
+                <div class="buttons is-centered mt-4">
+                    <button class="button is-primary is-medium">
+                        Guardar
+                    </button>
+                    <a href="{{ url_for('index') }}" class="button is-light is-medium">
+                        Cancelar
+                    </a>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

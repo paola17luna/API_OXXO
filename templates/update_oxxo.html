@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% block title %}Actualizar Oxxo{% endblock %}
+{% block content %}
+
+<div class="columns is-centered">
+    <div class="column is-half">
+        <div class="box">
+            <h3 class="title is-4 has-text-centered">Actualizar Informacion del Oxxo</h3>
+            <hr>
+
+            <form action="{{ url_for('update_oxxo', cod_sucursal=oxxo.cod_sucursal) }}" method="POST">
+
+                <div class="field">
+                    <label class="label">Nombre del Gerente</label>
+                    <div class="control">
+                        <input class="input" type="text" name="nombre_gerente" value="{{ oxxo.nombre_gerente }}" required>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label class="label">Apellido Paterno</label>
+                    <div class="control">
+                        <input class="input" type="text" name="ap_paterno" value="{{ oxxo.ap_paterno }}" required>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label class="label">Apellido Materno</label>
+                    <div class="control">
+                        <input class="input" type="text" name="ap_materno" value="{{ oxxo.ap_materno }}" required>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label class="label">No. Sucursal</label>
+                    <div class="control">
+                        <input class="input" type="number" name="no_sucursal" value="{{ oxxo.no_sucursal }}" min="1" max="300" required>
+                    </div>
+                </div>
+
+                <div class="buttons is-centered mt-4">
+                    <button class="button is-warning is-medium">
+                        Actualizar
+                    </button>
+                    <a href="{{ url_for('index') }}" class="button is-light is-medium">
+                        Cancelar
+                    </a>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block title %}Lista de Oxxos{% endblock %}
+{% block content %}
+<a href="{{ url_for('create_oxxo') }}" class="button is-success mb-3">Agregar Oxxo</a>
+<br>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Código Sucursal</th>
+            <th>Nombre Gerente</th>
+            <th>Apellido Paterno</th>
+            <th>Apellido Materno</th>
+            <th>No. Sucursal</th>
+            <th>Acciones</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        {% for oxxo in oxxos %}
+        <tr>
+            <td>{{ oxxo.cod_sucursal }}</td>
+            <td>{{ oxxo.nombre_gerente }}</td>
+            <td>{{ oxxo.ap_paterno }}</td>
+            <td>{{ oxxo.ap_materno }}</td>
+            <td>{{ oxxo.no_sucursal }}</td>
+            <td>
+               <a href="{{ url_for('delete_oxxo', cod_sucursal= oxxo.cod_sucursal )}}" 
+                class="button is-danger">Eliminar</a>
+                <a href="{{ url_for('update_oxxo', cod_sucursal= oxxo.cod_sucursal )}}" 
+                class="button is-warning">Actualizar</a> 
+            </td> 
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+
+{% endblock %}
